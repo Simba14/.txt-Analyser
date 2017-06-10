@@ -9,6 +9,10 @@ describe('TextReader', function() {
     it('initializes with an empty wordList array', function() {
       expect(textReader.wordList).toEqual([]);
     });
+
+    it('initializes with an empty wordData object', function() {
+      expect(textReader.wordData).toEqual({});
+    });
   })
 
   describe('#populateWordList', function() {
@@ -24,10 +28,18 @@ describe('TextReader', function() {
       expect(textReader.wordList).toEqual(['Meet', 'the', 'Meerkats']);
     })
 
-    it('does not retrieve extra spaces', function() {
+    it('does not retrieve any spaces', function() {
       text = '  Meet      the   ';
       textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['Meet', 'the']);
     })
   });
+
+  xdescribe('#countOccurrenceOfEachWord', function() {
+    it('counts number of times each words occurs', function() {
+      textReader.wordList = ['Meet', 'the', 'the', 'Meet', 'Meerkats']
+      textReader.countOccurrenceOfEachWord()
+      expect()
+    })
+  })
 });
