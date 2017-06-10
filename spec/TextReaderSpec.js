@@ -35,11 +35,11 @@ describe('TextReader', function() {
     })
   });
 
-  xdescribe('#countOccurrenceOfEachWord', function() {
+  describe('#countOccurrenceOfEachWord', function() {
     it('counts number of times each words occurs', function() {
-      textReader.wordList = ['Meet', 'the', 'the', 'Meet', 'Meerkats']
-      textReader.countOccurrenceOfEachWord()
-      expect()
+      textReader.wordList = ['Meet', 'the', 'the', 'Meet', 'Meerkats'];
+      textReader.countOccurrenceOfEachWord();
+      expect(textReader.wordData).toEqual({ 'Meet': 2, 'the': 2, 'Meerkats': 1 })
     })
   })
 });
