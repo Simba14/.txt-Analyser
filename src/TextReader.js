@@ -1,6 +1,7 @@
 //Returns the unique words of a txt file and the number of occurences
 function TextReader() {
-  this.wordList = []
+  this.wordList = [];
+  this.wordData = {};
 }
 
 TextReader.prototype.populateWordList = function(text) {
