@@ -4,5 +4,6 @@ function TextReader() {
 }
 
 TextReader.prototype.populateWordList = function(text) {
-  this.wordList = text.split(' ');
+  textWithoutPunctuation = text.replace(/[^\w]/g, ' ');
+  this.wordList = textWithoutPunctuation.split(' ').filter(Boolean);
 }
