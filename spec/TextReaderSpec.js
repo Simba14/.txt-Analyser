@@ -50,9 +50,17 @@ describe('TextReader', function() {
 
   describe('#countOccurrenceOfEachWord', function() {
     it('counts number of times each words occurs', function() {
-      textReader.wordList = ['Meet', 'the', 'the', 'Meet', 'Meerkats'];
+      textReader.wordList = ['meet', 'the', 'the', 'meet', 'meerkats'];
       textReader.countOccurrenceOfEachWord();
-      expect(textReader.wordData).toEqual({ 'Meet': 2, 'the': 2, 'Meerkats': 1 })
+      expect(textReader.wordData).toEqual({ 'meet': 2, 'the': 2, 'meerkats': 1 })
+    })
+  })
+
+  describe('#areOccurrencesPrimeNumbers', function() {
+    it('checks whether count of each word is a prime number', function() {
+      textReader.wordData = { 'meet': 2, 'the': 2, 'meerkats': 1 }
+      textReader.areOccurrencesPrimeNumbers()
+      expect(textReader.wordData).toEqual({ 'meet': [2, true], 'the': [2, true], 'meerkats':[1, true] })
     })
   })
 });
