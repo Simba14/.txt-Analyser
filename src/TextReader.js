@@ -7,7 +7,7 @@ function TextReader() {
 TextReader.prototype.populateWordList = function(text) {
   let textWithoutPunctuation = text.replace(/[^\w]/g, ' ');
   let wordArray = textWithoutPunctuation.split(' ').filter(Boolean);
-  this.wordList = this.getLowerCase(wordArray);
+  this.wordList = this.convertWordsToLowerCase(wordArray);
 }
 
 TextReader.prototype.countOccurrenceOfEachWord = function() {
@@ -22,7 +22,7 @@ TextReader.prototype.countOccurrenceOfEachWord = function() {
   }
 }
 
-TextReader.prototype.getLowerCase = function(wordArray) {
+TextReader.prototype.convertWordsToLowerCase = function(wordArray) {
   return wordArray.map(function(word) {
     return word.toLowerCase();
   })

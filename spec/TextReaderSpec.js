@@ -17,29 +17,36 @@ describe('TextReader', function() {
 
   describe('#populateWordList', function() {
     it('retrieves all the words from a text source and populates the wordList array', function() {
-      text = 'meet the meerkats';
+      let text = 'meet the meerkats';
       textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['meet', 'the', 'meerkats']);
     });
 
     it('does not retrieve any punctuation', function() {
-      text = ',meet//the.. meerkats?'
+      let text = ',meet//the.. meerkats?'
       textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['meet', 'the', 'meerkats']);
     })
 
     it('does not retrieve any spaces', function() {
-      text = '  meet      the   ';
+      let text = '  meet      the   ';
       textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['meet', 'the']);
     })
 
     it('all words are converted to lowercase', function() {
-      text = 'Meet The Meerkats';
+      let text = 'Meet The Meerkats';
       textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['meet', 'the', 'meerkats']);
     })
   });
+
+  // describe('#convertWordsToLowerCase', function() {
+  //   it('converts words in array to lowercase', function() {
+  //     let wordArray = ['Meet', 'The', 'Meerkats'];
+  //     expect(textReader.convertWordsToLowerCase(wordArray)).toEqual(['meet', 'the', 'meerkats']);
+  //   })
+  // })
 
   describe('#countOccurrenceOfEachWord', function() {
     it('counts number of times each words occurs', function() {
