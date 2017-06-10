@@ -23,5 +23,11 @@ describe('TextReader', function() {
       textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['Meet', 'the', 'Meerkats']);
     })
+
+    it('does not retrieve extra spaces', function() {
+      text = '  Meet      the   ';
+      textReader.populateWordList(text);
+      expect(textReader.wordList).toEqual(['Meet', 'the']);
+    })
   });
 });
