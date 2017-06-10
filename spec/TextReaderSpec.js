@@ -5,7 +5,7 @@ describe("TextReader", function() {
     textReader = new TextReader();
   });
 
-  it('initializes with an empty word list hash', function() {
-    expect(textReader.wordList).toEqual({});
+  it('initializes with an empty wordList array', function() {
+    expect(textReader.wordList).toEqual([]);
   });
 });
