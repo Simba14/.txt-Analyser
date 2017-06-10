@@ -2,3 +2,7 @@
 function TextReader() {
   this.wordList = []
 }
+
+TextReader.prototype.populateWordList = function(text) {
+  this.wordList = text.split(' ');
+}

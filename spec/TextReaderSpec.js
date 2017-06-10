@@ -14,7 +14,7 @@ describe('TextReader', function() {
   describe('#populateWordList', function() {
     it('retrieves all the words from a text and populates the wordList array', function() {
       text = 'Meet the Meerkats';
-      text.populateWordList(text);
+      textReader.populateWordList(text);
       expect(textReader.wordList).toEqual(['Meet', 'the', 'Meerkats']);
     });
   });
