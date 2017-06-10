@@ -1,5 +1,5 @@
 describe('TextReader', function() {
-  var textReader;
+  let textReader;
 
   beforeEach(function() {
     textReader = new TextReader();
@@ -17,21 +17,27 @@ describe('TextReader', function() {
 
   describe('#populateWordList', function() {
     it('retrieves all the words from a text source and populates the wordList array', function() {
-      text = 'Meet the Meerkats';
+      text = 'meet the meerkats';
       textReader.populateWordList(text);
-      expect(textReader.wordList).toEqual(['Meet', 'the', 'Meerkats']);
+      expect(textReader.wordList).toEqual(['meet', 'the', 'meerkats']);
     });
 
     it('does not retrieve any punctuation', function() {
-      text = ',Meet//the.. Meerkats?'
+      text = ',meet//the.. meerkats?'
       textReader.populateWordList(text);
-      expect(textReader.wordList).toEqual(['Meet', 'the', 'Meerkats']);
+      expect(textReader.wordList).toEqual(['meet', 'the', 'meerkats']);
     })
 
     it('does not retrieve any spaces', function() {
-      text = '  Meet      the   ';
+      text = '  meet      the   ';
       textReader.populateWordList(text);
-      expect(textReader.wordList).toEqual(['Meet', 'the']);
+      expect(textReader.wordList).toEqual(['meet', 'the']);
+    })
+
+    it('all words are converted to lowercase', function() {
+      text = 'Meet The Meerkats';
+      textReader.populateWordList(text);
+      expect(textReader.wordList).toEqual(['meet', 'the', 'meerkats']);
     })
   });
 

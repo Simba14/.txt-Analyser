@@ -5,6 +5,25 @@ function TextReader() {
 }
 
 TextReader.prototype.populateWordList = function(text) {
-  textWithoutPunctuation = text.replace(/[^\w]/g, ' ');
-  this.wordList = textWithoutPunctuation.split(' ').filter(Boolean);
+  let textWithoutPunctuation = text.replace(/[^\w]/g, ' ');
+  let wordArray = textWithoutPunctuation.split(' ').filter(Boolean);
+  this.wordList = this.getLowerCase(wordArray);
+}
+
+TextReader.prototype.countOccurrenceOfEachWord = function() {
+  let word;
+  for (let i = 0; i < this.wordList.length; i++) {
+    word = this.wordList[i];
+    if (typeof this.wordData[word] === 'undefined') {
+      this.wordData[word] = 1;
+    } else {
+      this.wordData[word]++;
+    }
+  }
+}
+
+TextReader.prototype.getLowerCase = function(wordArray) {
+  return wordArray.map(function(word) {
+    return word.toLowerCase();
+  })
 }
