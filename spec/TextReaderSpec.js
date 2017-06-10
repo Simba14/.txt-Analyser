@@ -41,12 +41,12 @@ describe('TextReader', function() {
     })
   });
 
-  // describe('#convertWordsToLowerCase', function() {
-  //   it('converts words in array to lowercase', function() {
-  //     let wordArray = ['Meet', 'The', 'Meerkats'];
-  //     expect(textReader.convertWordsToLowerCase(wordArray)).toEqual(['meet', 'the', 'meerkats']);
-  //   })
-  // })
+  describe('#convertWordsToLowerCase', function() {
+    it('converts words in array to lowercase', function() {
+      let wordArray = ['Meet', 'The', 'Meerkats'];
+      expect(textReader.convertWordsToLowerCase(wordArray)).toEqual(['meet', 'the', 'meerkats']);
+    })
+  })
 
   describe('#countOccurrenceOfEachWord', function() {
     it('counts number of times each words occurs', function() {
