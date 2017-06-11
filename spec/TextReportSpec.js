@@ -6,7 +6,7 @@ describe('TextReport', function() {
   beforeEach(function() {
     analyser = jasmine.createSpyObj('analyser', ['populateWordList'])
     text = 'Meerkats are comical, comical mongooses widely spread across Africa Africa'
-    textReport = new TextReport(text);
+    textReport = new TextReport(text, analyser);
   });
 
   describe('initialization', function() {
