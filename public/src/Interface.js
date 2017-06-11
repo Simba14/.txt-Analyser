@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  let textAnalyser = new TextAnalyser;
 
   $('#analyse-btn').click(function(){
     $('#error-message').text('');
@@ -19,17 +18,9 @@ $(document).ready(function() {
   function generateTextReport(text) {
     let report = new TextReport(text);
     let reportObject = report.generate();
-    //let textDataObject = analyseText(text);
     let textReport = formatTextReport(reportObject);
     $('#report-header').text('Text Report')
     $('#text-report').text(textReport).css('padding', '20px');
-  }
-
-  function analyseText(text) {
-    textAnalyser.populateWordList(text);
-    textAnalyser.countOccurrenceOfEachWord();
-    textAnalyser.areOccurrencesPrimeNumbers();
-    return textAnalyser.wordData
   }
 
   function formatTextReport(textData) {

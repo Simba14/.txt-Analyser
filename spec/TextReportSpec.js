@@ -24,4 +24,6 @@ describe('TextReport', function() {
       expect(textReport.generate()).toEqual(analyser.wordData)
     })
   })
+
+  
 })
