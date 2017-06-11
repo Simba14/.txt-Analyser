@@ -10,4 +10,10 @@ describe('FileHandler', function() {
       expect(fileHandler.file).toEqual('./sample_text.txt');
     })
   })
+
+  describe('isATextFile', function() {
+    it('returns true if file is a .txt file', function() {
+      expect(fileHandler.isATextFile).toEqual(true);
+    })
+  })
 })
