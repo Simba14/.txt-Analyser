@@ -1,13 +1,14 @@
 describe('FileHandler', function() {
   let fileHandler;
+  let file = { name: './sample_text.txt' }
 
   beforeEach(function() {
-    fileHandler = new FileHandler('./sample_text.txt');
+    fileHandler = new FileHandler(file);
   });
 
   describe('initialization', function() {
     it('stores file passed as argmument', function() {
-      expect(fileHandler.file).toEqual('./sample_text.txt');
+      expect(fileHandler.file).toEqual(file);
     })
   })
 

@@ -7,9 +7,11 @@ $(document).ready(function() {
   });
 
   function isAValidFile(file) {
-    let fileHandler = new FileHandler(file.name);
+    let fileHandler = new FileHandler(file);
     if (fileHandler.isATextFile()) {
-      loadFileAsText();
+      loadFileAsText(file);
+      // let textFromFileLoaded = fileHandler.loadFileAsText();
+      // generateTextReport(textFromFileLoaded);
     } else {
       generateErrorMessage();
     }
@@ -27,15 +29,14 @@ $(document).ready(function() {
     $('#error-message').text('Invalid file submitted. Please input the url of a .txt file.');
   }
 
-  function loadFileAsText(){
-    let fileToLoad = document.getElementById("file-to-analyse").files[0];
-
+  function loadFileAsText(file){
     let fileReader = new FileReader();
+
     fileReader.onload = function(fileLoadedEvent){
         let textFromFileLoaded = fileLoadedEvent.target.result;
         generateTextReport(textFromFileLoaded);
     };
 
-    fileReader.readAsText(fileToLoad, "UTF-8");
+    fileReader.readAsText(file, "UTF-8");
   }
 });
