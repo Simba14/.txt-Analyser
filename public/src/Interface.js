@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // let fileHandler = New FileHandler
 
   $('#analyse-btn').click(function(){
     let file = $('input[name="file-input"]').val();
@@ -11,10 +10,16 @@ $(document).ready(function() {
     let fileHandler = new FileHandler(file);
     if (fileHandler.isATextFile()) {
       generateTextReport();
+    } else {
+      generateErrorMessage();
     }
   }
 
   function generateTextReport() {
     $('#text-report').text('file');
+  }
+
+  function generateErrorMessage() {
+    $('#text-report').text('Invalid file submitted. Please input the url of a .txt file.');
   }
 });
