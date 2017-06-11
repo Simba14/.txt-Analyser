@@ -63,4 +63,10 @@ describe('TextReader', function() {
       expect(textReader.wordData).toEqual({ 'meet': [3, true], 'the': [2, true], 'meerkats':[1, false], 'please': [6, false] })
     })
   })
+
+  describe('#isAPrimeNumber', function() {
+    it('checks whether 1 is a prime number', function() {
+      expect(reader.isAPrimeNumber(1)).toEqual(false);
+    })
+  })
 });
