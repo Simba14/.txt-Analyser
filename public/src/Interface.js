@@ -17,9 +17,10 @@ $(document).ready(function() {
   }
 
   function generateTextReport() {
-    let textData = analyseText();
-    console.log(textData);
-    $('#text-report').text('file');
+    let textDataObject = analyseText();
+    let textReport = formatTextReport(textDataObject);
+    console.log(textReport)
+    $('#text-report').text(textReport);
   }
 
   function analyseText() {
@@ -27,6 +28,14 @@ $(document).ready(function() {
     textReader.countOccurrenceOfEachWord();
     textReader.areOccurrencesPrimeNumbers();
     return textReader.wordData
+  }
+
+  function formatTextReport(textData) {
+    let wordDataArray = [];
+    for (let key in textData) {
+      wordDataArray.push(`${key} - Count: ${textData[key][0]} (Prime number: ${textData[key][1]})`);
+    }
+    return wordDataArray.join('\n');
   }
 
   function generateErrorMessage() {
