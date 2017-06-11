@@ -1,14 +1,18 @@
 {
-  "name": "text-reader",
+  "name": "text-analyser",
   "version": "1.0.0",
   "description": "Application that returns the unique words from a .txt file, along with its occurrence",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sean Blundell",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3"
+  },
+  "engines": {
+    "node": "6.11.0"
   }
 }
