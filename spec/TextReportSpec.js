@@ -13,5 +13,9 @@ describe('TextReport', function() {
     it('stores text passed as argmument', function() {
       expect(textReport.text).toEqual('Meerkats are comical, comical mongooses widely spread across Africa Africa');
     })
+
+    it('initializes with new analyser', function() {
+      expect(textReport.analyser).toEqual(analyser);
+    })
   })
 })

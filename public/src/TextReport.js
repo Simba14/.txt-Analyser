@@ -1,5 +1,5 @@
-function TextReport(text) {
-  this.analyser = new TextAnalyser;
+function TextReport(text, analyser = new TextAnalyser) {
+  this.analyser = analyser;
   this.text = text;
 }
 
