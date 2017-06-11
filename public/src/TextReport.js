@@ -10,11 +10,3 @@ TextReport.prototype.generate = function(){
   this.analyser.areOccurrencesPrimeNumbers();
   return this.textData = this.analyser.wordData
 }
-
-TextReport.prototype.format = function() {
-  let wordDataArray = [];
-  for (let key in textData) {
-    wordDataArray.push(`${key.toUpperCase()} - Count: ${textData[key][0]} (Prime number: ${textData[key][1]})`);
-  }
-  return wordDataArray.join('\n');
-}
