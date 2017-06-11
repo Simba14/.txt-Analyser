@@ -2,15 +2,17 @@
 <html>
   <head>
     <title>.txt Analyser</title>
-    <!-- <link href="/style.css" rel='stylesheet'> -->
+    <link type='text/css' href="/style.css" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Special+Elite" rel="stylesheet">
   </head>
   <body>
-    <h1>.txt Analyser<h1>
+    <h1>.txt Analyser</h1>
     <h3>Input at .txt file and click analyse to get a detailed report!</h3>
     <div id='user-input'>
       <input name='file-input' placeholder='Input a .txt url'></input>
       <button id='analyse-btn'>Analyse</button>
     </div>
+    <div id='error-message'></div>
     <div id='text-report'></div>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="src/Interface.js"></script>

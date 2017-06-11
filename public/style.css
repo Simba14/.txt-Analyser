@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  background-color: #ffd1ce;
+  align-items: center;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: 'Special Elite', cursive;
+}
+
+#user-input {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#text-report {
+  margin-top: 20px;
+  margin: auto;
+  text-align: center;
+  width: 70%;
+  background-color: antiquewhite;
+  border-radius: 15px;
+}
+
+#error-message {
+  color: red;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  left: 0;
+  height: 10%;
+  background-color: #ffd9d1;
+  text-align: center;
+}

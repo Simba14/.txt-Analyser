@@ -20,6 +20,6 @@ $(document).ready(function() {
   }
 
   function generateErrorMessage() {
-    $('#text-report').text('Invalid file submitted. Please input the url of a .txt file.');
+    $('#error-message').text('Invalid file submitted. Please input the url of a .txt file.');
   }
 });
