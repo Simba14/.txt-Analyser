@@ -76,5 +76,9 @@ describe('TextReader', function() {
     it('checks whether 3 is a prime number', function() {
       expect(textReader.isAPrimeNumber(3)).toEqual(true);
     })
+
+    it('checks whether 100 is a prime number', function() {
+      expect(textReader.isAPrimeNumber(100)).toEqual(false);
+    })
   })
 });
