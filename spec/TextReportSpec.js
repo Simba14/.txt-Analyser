@@ -4,7 +4,7 @@ describe('TextReport', function() {
   let analyser;
 
   beforeEach(function() {
-    analyser = jasmine.createSpyObj('analyser', ['populateWordList'])
+    analyser = jasmine.createSpyObj('analyser', ['populateWordList', 'wordData'])
     text = 'Meerkats are comical, comical mongooses widely spread across Africa Africa'
     textReport = new TextReport(text, analyser);
   });
@@ -16,6 +16,12 @@ describe('TextReport', function() {
 
     it('initializes with new analyser', function() {
       expect(textReport.analyser).toEqual(analyser);
+    })
+  })
+
+  describe('#generate', function() {
+    it('returns an object of words with associated metrics', function() {
+      expect(textReport.generate()).toEqual(analyser.wordData)
     })
   })
 })
