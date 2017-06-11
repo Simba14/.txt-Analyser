@@ -10,8 +10,9 @@ $(document).ready(function() {
     let fileHandler = new FileHandler(file);
     if (fileHandler.isATextFile()) {
       loadFileAsText(file);
-      // let textFromFileLoaded = fileHandler.loadFileAsText();
-      // generateTextReport(textFromFileLoaded);
+      // fileHandler.loadFileAsText();
+      // debugger;
+      // generateTextReport(fileHandler.fileText);
     } else {
       generateErrorMessage();
     }

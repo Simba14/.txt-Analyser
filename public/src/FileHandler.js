@@ -9,12 +9,15 @@ FileHandler.prototype.isATextFile = function() {
 
 FileHandler.prototype.loadFileAsText = function() {
   let fileReader = new FileReader();
-  let textFromFileLoaded;
+  let self = this;
 
   fileReader.onload = function(fileLoadedEvent){
-      textFromFileLoaded = fileLoadedEvent.target.result;
-      debugger;
+      self.storeFileText(fileLoadedEvent.target.result);
   };
-  return textFromFileLoaded;
+
   fileReader.readAsText(this.file, "UTF-8");
+}
+
+FileHandler.prototype.storeFileText = function(text) {
+  return this.fileText = text;
 }
