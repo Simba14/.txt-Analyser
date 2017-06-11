@@ -2,6 +2,7 @@ $(document).ready(function() {
   let textReader = new TextReader;
 
   $('#analyse-btn').click(function(){
+    $('#error-message').text('');
     let file = $('input[name="file-input"]').val();
     isAValidFile(file);
   });
