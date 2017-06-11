@@ -10,21 +10,21 @@ $(document).ready(function() {
   function isAValidFile(file) {
     let fileHandler = new FileHandler(file);
     if (fileHandler.isATextFile()) {
-      generateTextReport();
+      loadFileAsText();
     } else {
       generateErrorMessage();
     }
   }
 
-  function generateTextReport() {
-    let textDataObject = analyseText();
+  function generateTextReport(text) {
+    let textDataObject = analyseText(text);
     let textReport = formatTextReport(textDataObject);
     $('#report-header').text('Text Report')
     $('#text-report').text(textReport).css('padding', '20px');
   }
 
-  function analyseText() {
-    textAnalyser.populateWordList('This me I want this to work');
+  function analyseText(text) {
+    textAnalyser.populateWordList(text);
     textAnalyser.countOccurrenceOfEachWord();
     textAnalyser.areOccurrencesPrimeNumbers();
     return textAnalyser.wordData
@@ -40,5 +40,17 @@ $(document).ready(function() {
 
   function generateErrorMessage() {
     $('#error-message').text('Invalid file submitted. Please input the url of a .txt file.');
+  }
+
+  function loadFileAsText(){
+    let fileToLoad = document.getElementById("file-to-analyse").files[0];
+
+    let fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent){
+        let textFromFileLoaded = fileLoadedEvent.target.result;
+        generateTextReport(textFromFileLoaded);
+    };
+
+    fileReader.readAsText(fileToLoad, "UTF-8");
   }
 });
