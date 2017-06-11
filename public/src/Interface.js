@@ -18,17 +18,9 @@ $(document).ready(function() {
   function generateTextReport(text) {
     let report = new TextReport(text);
     let reportObject = report.generate();
-    let textReport = formatTextReport(reportObject);
+    let formattedReport = report.format();
     $('#report-header').text('Text Report')
-    $('#text-report').text(textReport).css('padding', '20px');
-  }
-
-  function formatTextReport(textData) {
-    let wordDataArray = [];
-    for (let key in textData) {
-      wordDataArray.push(`${key.toUpperCase()} - Count: ${textData[key][0]} (Prime number: ${textData[key][1]})`);
-    }
-    return wordDataArray.join('\n');
+    $('#text-report').text(formattedReport).css('padding', '20px');
   }
 
   function generateErrorMessage() {
