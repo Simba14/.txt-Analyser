@@ -38,3 +38,12 @@ TextReader.prototype.areOccurrencesPrimeNumbers = function() {
     this.wordData[key] = [this.wordData[key], this.wordData[key] > 1];
   }
 }
+
+TextReader.prototype.isAPrimeNumber = function(number) {
+  for(let i = 2; i < number; i++) {
+    if(number % i === 0) {
+      return false;
+    }
+  }
+  return number > 1;
+}
