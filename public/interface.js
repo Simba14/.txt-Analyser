@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  // let fileHandler = New FileHandler();
-
+  // let fileHandler = New FileHandler
 
   $('#analyse-btn').click(function(){
-    generateTextReport();
+    let file = $('input[name="file-input"]').val();
+    generateTextReport(file);
   });
 
-  function generateTextReport() {
-    $('#text-report').text("Fircksda asdasd");
+  function generateTextReport(file) {
+    $('#text-report').text(file);
   }
 });
