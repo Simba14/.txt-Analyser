@@ -58,9 +58,9 @@ describe('TextReader', function() {
 
   describe('#areOccurrencesPrimeNumbers', function() {
     it('checks whether count of each word is a prime number', function() {
-      textReader.wordData = { 'meet': 2, 'the': 2, 'meerkats': 1 }
+      textReader.wordData = { 'meet': 3, 'the': 2, 'meerkats': 1, 'please': 6}
       textReader.areOccurrencesPrimeNumbers()
-      expect(textReader.wordData).toEqual({ 'meet': [2, true], 'the': [2, true], 'meerkats':[1, true] })
+      expect(textReader.wordData).toEqual({ 'meet': [3, true], 'the': [2, true], 'meerkats':[1, false], 'please': [6, false] })
     })
   })
 });

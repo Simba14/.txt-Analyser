@@ -27,3 +27,14 @@ TextReader.prototype.convertWordsToLowerCase = function(wordArray) {
     return word.toLowerCase();
   })
 }
+
+TextReader.prototype.areOccurrencesPrimeNumbers = function() {
+  for (let key in this.wordData) {
+    for(let i = 2; i < this.wordData[key]; i++) {
+      if(this.wordData[key] % i === 0) {
+        return this.wordData[key] = [this.wordData[key], false];
+      }
+    }
+    this.wordData[key] = [this.wordData[key], this.wordData[key] > 1];
+  }
+}
