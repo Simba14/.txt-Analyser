@@ -4,7 +4,7 @@ describe('TextReport', function() {
   let analyser;
 
   beforeEach(function() {
-    analyser = jasmine.createSpyObj('analyser', ['populateWordList', 'wordData'])
+    analyser = jasmine.createSpyObj('analyser', ['populateWordList', 'wordData', 'countOccurrenceOfEachWord', 'areOccurrencesPrimeNumbers'])
     text = 'Meerkats are comical, comical mongooses widely spread across Africa Africa'
     textReport = new TextReport(text, analyser);
   });
