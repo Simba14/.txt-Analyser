@@ -3,17 +3,13 @@ $(document).ready(function() {
 
   $('#analyse-btn').click(function(){
     $('#error-message').text('');
-    let file = $('input[name="file-input"]').val();
+    let file = $('input[name="file-uploaded"]').val();
     isAValidFile(file);
   });
 
   function isAValidFile(file) {
     let fileHandler = new FileHandler(file);
     if (fileHandler.isATextFile()) {
-      $.ajax({url: file, success: function(data) {
-        let text = data;
-        console.log(text);
-      }});
       generateTextReport();
     } else {
       generateErrorMessage();
