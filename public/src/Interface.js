@@ -2,12 +2,12 @@ $(document).ready(function() {
 
   $('#analyse-btn').click(function(){
     $('#error-message').text('');
-    let file = $('input[name="file-uploaded"]').val();
+    let file = document.getElementById("file-to-analyse").files[0];
     isAValidFile(file);
   });
 
   function isAValidFile(file) {
-    let fileHandler = new FileHandler(file);
+    let fileHandler = new FileHandler(file.name);
     if (fileHandler.isATextFile()) {
       loadFileAsText();
     } else {
