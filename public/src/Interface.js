@@ -17,8 +17,10 @@ $(document).ready(function() {
   }
 
   function generateTextReport(text) {
-    let textDataObject = analyseText(text);
-    let textReport = formatTextReport(textDataObject);
+    let report = new TextReport(text);
+    let reportObject = report.generate();
+    //let textDataObject = analyseText(text);
+    let textReport = formatTextReport(reportObject);
     $('#report-header').text('Text Report')
     $('#text-report').text(textReport).css('padding', '20px');
   }
