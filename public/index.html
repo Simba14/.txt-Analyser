@@ -5,11 +5,17 @@
     <!-- <link href="/style.css" rel='stylesheet'> -->
   </head>
   <body>
-    <h1>.txt Analyzer<h1>
-    <h3>Input at .txt file and click analyze to get a detailed report!</h3>
-    <input></input>
-    <submit>
+    <h1>.txt Analyser<h1>
+    <h3>Input at .txt file and click analyse to get a detailed report!</h3>
+    <div id='user-input'>
+      <input placeholder='Input a .txt url'></input>
+      <button id='analyse-btn'>Analyse</button>
+    </div>
+    <div id='text-report'></div>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
+    <script src="./Interface.js"></script>
   </body>
+  <footer>
+    <h4>Powered by <a id='github-link' href='https://github.com/Simba14'>Blundell</a><h4>
+  </footer>
 </html>

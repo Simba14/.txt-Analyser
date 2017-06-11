@@ -1,4 +1,12 @@
 $(document).ready(function() {
-  var
+  // let fileHandler = New FileHandler();
 
-)};
+
+  $('#analyse-btn').click(function(){
+    generateTextReport();
+  });
+
+  function generateTextReport() {
+    $('#text-report').text("Fircksda asdasd");
+  }
+});
