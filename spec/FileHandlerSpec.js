@@ -13,7 +13,7 @@ describe('FileHandler', function() {
 
   describe('isATextFile', function() {
     it('returns true if file is a .txt file', function() {
-      expect(fileHandler.isATextFile).toEqual(true);
+      expect(fileHandler.isATextFile()).toEqual(true);
     })
   })
 })

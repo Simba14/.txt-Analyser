@@ -2,3 +2,7 @@
 function FileHandler(file) {
   this.file = file;
 }
+
+FileHandler.prototype.isATextFile = function() {
+  return /^.*\.(txt)$/.test(this.file);
+}
