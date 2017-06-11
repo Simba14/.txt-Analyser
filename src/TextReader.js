@@ -11,9 +11,8 @@ TextReader.prototype.populateWordList = function(text) {
 }
 
 TextReader.prototype.countOccurrenceOfEachWord = function() {
-  let word;
   for (let i = 0; i < this.wordList.length; i++) {
-    word = this.wordList[i];
+    let word = this.wordList[i];
     if (typeof this.wordData[word] === 'undefined') {
       this.wordData[word] = 1;
     } else {
@@ -30,18 +29,14 @@ TextReader.prototype.convertWordsToLowerCase = function(wordArray) {
 
 TextReader.prototype.areOccurrencesPrimeNumbers = function() {
   for (let key in this.wordData) {
-    for(let i = 2; i < this.wordData[key]; i++) {
-      if(this.wordData[key] % i === 0) {
-        return this.wordData[key] = [this.wordData[key], false];
-      }
-    }
-    this.wordData[key] = [this.wordData[key], this.wordData[key] > 1];
+    let occurrence = this.wordData[key];
+    this.wordData[key] = [occurrence, this.isAPrimeNumber(occurrence)];
   }
 }
 
 TextReader.prototype.isAPrimeNumber = function(number) {
-  for(let i = 2; i < number; i++) {
-    if(number % i === 0) {
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
       return false;
     }
   }
