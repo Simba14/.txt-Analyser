@@ -19,6 +19,10 @@ h1 {
   font-family: 'Special Elite', cursive;
 }
 
+#report-header {
+  font-family: 'Special Elite', cursive;
+}
+
 #user-input {
   margin-top: 20px;
   margin-bottom: 40px;
@@ -29,10 +33,11 @@ h1 {
   margin: auto;
   text-align: left;
   width: 70%;
-  background-color: antiquewhite;
+  background-color: #fffdfb;
   border-radius: 15px;
   white-space: pre-wrap;
   line-height: 250%;
+  font-family: 'Special Elite', cursive;
 }
 
 #error-message {
