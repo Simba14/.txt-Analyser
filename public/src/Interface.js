@@ -10,10 +10,10 @@ $(document).ready(function() {
   function isAValidFile(file) {
     let fileHandler = new FileHandler(file);
     if (fileHandler.isATextFile()) {
-      $.get(file, function( data ) {
+      $.ajax({url: file, success: function(data) {
         let text = data;
         console.log(text);
-      });
+      }});
       generateTextReport();
     } else {
       generateErrorMessage();
