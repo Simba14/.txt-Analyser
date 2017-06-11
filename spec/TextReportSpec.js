@@ -28,7 +28,7 @@ describe('TextReport', function() {
   describe('#format', function() {
     it('formats text report', function() {
       textReport.textData = {'meerkat': [2, true], 'africa': [1, false]}
-      expect(textReport.format()).toEqual('MEERKATS - Count: 2 (Prime Number: true)\nAFRICA - Count: 1 (Prime Number: false)')
+      expect(textReport.format()).toEqual('MEERKAT - Count: 2 (Prime number: true)\nAFRICA - Count: 1 (Prime number: false)')
     })
   })
 })
