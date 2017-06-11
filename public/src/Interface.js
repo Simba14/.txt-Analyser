@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  let textReader = new TextReader;
+  let textAnalyser = new TextAnalyser;
 
   $('#analyse-btn').click(function(){
     $('#error-message').text('');
@@ -24,10 +24,10 @@ $(document).ready(function() {
   }
 
   function analyseText() {
-    textReader.populateWordList('This me I want this to work');
-    textReader.countOccurrenceOfEachWord();
-    textReader.areOccurrencesPrimeNumbers();
-    return textReader.wordData
+    textAnalyser.populateWordList('This me I want this to work');
+    textAnalyser.countOccurrenceOfEachWord();
+    textAnalyser.areOccurrencesPrimeNumbers();
+    return textAnalyser.wordData
   }
 
   function formatTextReport(textData) {
