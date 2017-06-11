@@ -19,8 +19,7 @@ $(document).ready(function() {
   function generateTextReport() {
     let textDataObject = analyseText();
     let textReport = formatTextReport(textDataObject);
-    console.log(textReport)
-    $('#text-report').text(textReport);
+    $('#text-report').text(textReport).css('padding', '20px');
   }
 
   function analyseText() {
@@ -33,7 +32,7 @@ $(document).ready(function() {
   function formatTextReport(textData) {
     let wordDataArray = [];
     for (let key in textData) {
-      wordDataArray.push(`${key} - Count: ${textData[key][0]} (Prime number: ${textData[key][1]})`);
+      wordDataArray.push(`${key.toUpperCase()} - Count: ${textData[key][0]} (Prime number: ${textData[key][1]})`);
     }
     return wordDataArray.join('\n');
   }
