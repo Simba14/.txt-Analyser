@@ -19,7 +19,7 @@ describe('FileHandler', function() {
   })
 
   describe('#storeFileText', function() {
-    it('stores text passed through', function() {
+    it('stores text of file', function() {
       let text = 'meet the meerkats';
       fileHandler.storeFileText(text)
       expect(fileHandler.fileText).toEqual(text);
