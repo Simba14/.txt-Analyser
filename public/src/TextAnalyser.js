@@ -6,7 +6,7 @@ function TextAnalyser() {
 
 TextAnalyser.prototype.populateWordList = function(text) {
   let textWithoutPunctuation = text.replace(/[^\w]/g, ' ');
-  let wordArray = textWithoutPunctuation.split(' ').filter(Boolean);
+  let wordArray = textWithoutPunctuation.split(' ').filter(Boolean).sort();
   this.wordList = this.convertWordsToLowerCase(wordArray);
 }
 
