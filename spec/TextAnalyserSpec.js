@@ -31,7 +31,7 @@ describe('TextAnalyser', function() {
     it('does not retrieve any punctuation', function() {
       let text = ',meet//the.. meerkats?'
       textAnalyser.populateWordList(text);
-      expect(textAnalyser.wordList).toEqual(['meet', 'the', 'meerkats']);
+      expect(textAnalyser.wordList).toEqual(['meerkats', 'meet', 'the']);
     })
 
     it('does not retrieve any spaces', function() {
@@ -43,7 +43,7 @@ describe('TextAnalyser', function() {
     it('all words are converted to lowercase', function() {
       let text = 'Meet The Meerkats';
       textAnalyser.populateWordList(text);
-      expect(textAnalyser.wordList).toEqual(['meet', 'the', 'meerkats']);
+      expect(textAnalyser.wordList).toEqual(['meerkats', 'meet', 'the']);
     })
   });
 
