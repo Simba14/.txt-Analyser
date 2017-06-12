@@ -2,11 +2,13 @@
 
 A web application that allows a user to upload a .txt file and analyse the words that it contains.
 The analysis consists of a report detailing:
-- The complete set of unique words.
+- The complete set of unique words in alphabetical order.
 - The number of times each word appears.
 - Whether or not that number is a prime number.
 
 [Analyse your .txt files now!](https://txt-analyser.herokuapp.com/)
+
+![alt text](http://i.imgur.com/Vtoc6u4.jpg)
 
 ### Installation
 
