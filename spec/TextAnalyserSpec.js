@@ -17,9 +17,15 @@ describe('TextAnalyser', function() {
 
   describe('#populateWordList', function() {
     it('retrieves all the words from a text source and populates the wordList array', function() {
-      let text = 'meet the meerkats';
+      let text = 'meerkats meeting';
       textAnalyser.populateWordList(text);
-      expect(textAnalyser.wordList).toEqual(['meet', 'the', 'meerkats']);
+      expect(textAnalyser.wordList).toEqual(['meerkats', 'meeting']);
+    });
+
+    it('sorts wordList array alphabetically', function() {
+      let text = 'meet the cheeky and fun meerkats';
+      textAnalyser.populateWordList(text);
+      expect(textAnalyser.wordList).toEqual(['and', 'cheeky', 'fun', 'meerkats', 'meet', 'the']);
     });
 
     it('does not retrieve any punctuation', function() {
