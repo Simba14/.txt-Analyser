@@ -12,9 +12,17 @@ describe('FileHandler', function() {
     })
   })
 
-  describe('isATextFile', function() {
+  describe('#isATextFile', function() {
     it('returns true if file is a .txt file', function() {
       expect(fileHandler.isATextFile()).toEqual(true);
+    })
+  })
+
+  describe('#storeFileText', function() {
+    it('stores text passed through', function() {
+      let text = 'meet the meerkats';
+      fileHandler.storeFileText(text)
+      expect(fileHandler.fileText).toEqual(text);
     })
   })
 })
