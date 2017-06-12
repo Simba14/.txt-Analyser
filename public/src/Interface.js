@@ -38,6 +38,6 @@ $(document).ready(function() {
   }
 
   function generateErrorMessage() {
-    $('#error-message').text('Invalid file submitted. Please input the url of a .txt file.');
+    $('#error-message').text('Invalid file submitted. Please upload a file with the extension .txt.');
   }
 });
