@@ -37,6 +37,6 @@ $(document).ready(function() {
   }
 
   function generateErrorMessage() {
-    $('#error-message').text('Invalid file submitted. Please upload a file with the extension .txt.');
+    $('#error-message').text('Invalid file submitted. Please upload a file with the extension .txt');
   }
 });
