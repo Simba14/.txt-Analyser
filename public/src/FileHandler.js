@@ -5,7 +5,7 @@ function FileHandler(file) {
 
 FileHandler.prototype.isATextFile = function() {
   return /^.*\.(txt)$/.test(this.file.name);
-}
+};
 
 FileHandler.prototype.loadFileAsText = function(fileReader = new FileReader()) {
   fileReader = fileReader;
@@ -16,8 +16,8 @@ FileHandler.prototype.loadFileAsText = function(fileReader = new FileReader()) {
   };
 
   return fileReader.readAsText(this.file, "UTF-8");
-}
+};
 
 FileHandler.prototype.storeFileText = function(text) {
   return this.fileText = text;
-}
+};

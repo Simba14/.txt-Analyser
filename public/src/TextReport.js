@@ -1,7 +1,6 @@
-function TextReport(text, analyser = new TextAnalyser) {
+function TextReport(text, analyser = new TextAnalyser()) {
   this.analyser = analyser;
   this.text = text;
-  this.textData;
 }
 
 TextReport.prototype.generate = function(){
@@ -9,7 +8,7 @@ TextReport.prototype.generate = function(){
   this.analyser.countOccurrenceOfEachWord();
   this.analyser.areOccurrencesPrimeNumbers();
   return this.textData = this.analyser.wordData
-}
+};
 
 TextReport.prototype.format = function() {
   let wordDataArray = [];
@@ -17,4 +16,4 @@ TextReport.prototype.format = function() {
     wordDataArray.push(`${key.toUpperCase()} - Count: ${this.textData[key][0]} (Prime number: ${this.textData[key][1]})`);
   }
   return wordDataArray.join('\n');
-}
+};

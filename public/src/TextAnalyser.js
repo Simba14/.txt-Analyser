@@ -8,7 +8,7 @@ TextAnalyser.prototype.populateWordList = function(text) {
   let textWithoutPunctuation = text.replace(/[^\w]/g, ' ');
   let wordArray = textWithoutPunctuation.split(' ').filter(Boolean).sort();
   this.wordList = this.convertWordsToLowerCase(wordArray);
-}
+};
 
 TextAnalyser.prototype.countOccurrenceOfEachWord = function() {
   for (let i = 0; i < this.wordList.length; i++) {
@@ -19,20 +19,20 @@ TextAnalyser.prototype.countOccurrenceOfEachWord = function() {
       this.wordData[word]++;
     }
   }
-}
+};
 
 TextAnalyser.prototype.convertWordsToLowerCase = function(wordArray) {
   return wordArray.map(function(word) {
     return word.toLowerCase();
-  })
-}
+  });
+};
 
 TextAnalyser.prototype.areOccurrencesPrimeNumbers = function() {
   for (let key in this.wordData) {
     let occurrence = this.wordData[key];
     this.wordData[key] = [occurrence, this.isAPrimeNumber(occurrence)];
   }
-}
+};
 
 TextAnalyser.prototype.isAPrimeNumber = function(number) {
   for (let i = 2; i < number; i++) {
@@ -41,4 +41,4 @@ TextAnalyser.prototype.isAPrimeNumber = function(number) {
     }
   }
   return number > 1;
-}
+};
