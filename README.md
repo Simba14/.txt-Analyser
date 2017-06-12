@@ -1,14 +1,35 @@
-Thanks for your interest in comparethemarket.com.
-The following test has been compiled to look at how you would structure a project, and the approach you would take to solve the problem.
-It is recommended that you complete the test in JavaScript, either in a browser or in Node, depending on your strengths.
+# .txt Analyser
 
-We ask that you can keep the details of this test confidential and if you have any questions please get in touch.
+A web application that allows a user to upload a .txt file and analyse the words that it contains.
+The analysis consists of a report detailing:
+- The complete set of unique words
+- The number of times each word appears
+- Whether that number is a prime number or not
 
-When you have completed the test please send it back for review. Technical TestThe test is as follows: Given a book in a text file (http://www.loyalbooks.com/download/text/Railway-Children-by-E-Nesbit.txt for example)
+[Analyse your .txt files now!)](https://txt-analyser.herokuapp.com/)
 
-1.Write an application that outputs the individual words that appear in the book, and how many times that word appears in the text file.
-2.The second part is to also output whether the number of times each word appears is a prime number.
+### Installation
 
-The following assumptions can be made:
- Ignore punctuation and capitalisation
- TDD is expected
+- Clone this repository
+- In your terminal:
+  - Change into the project directory
+  - run `npm install`
+  - run `node index.js`
+- In your browers:
+  - Navigate to `http://localhost:8000/` and start interacting with the app.
+
+**To Run the Tests**
+
+- Run `npm test`
+
+### Technologies
+
+The app was written in JavaScript and built with:
+
+- NodeJS
+- Express
+
+
+And tested with:
+
+- Jasmine
