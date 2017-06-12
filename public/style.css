@@ -25,7 +25,18 @@ h1 {
 
 #user-input {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+#analyse-btn {
+  height: 30px;
+  width: 100px;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: white;
+  background-color: #dcf0f0;
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #text-report {
