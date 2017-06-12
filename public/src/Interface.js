@@ -14,7 +14,6 @@ $(document).ready(function() {
 
   $('#analyse-btn').click(function(){
     $('#error-message').text('');
-    console.log(fileHandler);
     generateTextReport(fileHandler);
   });
 

@@ -7,8 +7,8 @@ FileHandler.prototype.isATextFile = function() {
   return /^.*\.(txt)$/.test(this.file.name);
 }
 
-FileHandler.prototype.loadFileAsText = function() {
-  let fileReader = new FileReader();
+FileHandler.prototype.loadFileAsText = function(fileReader = new FileReader()) {
+  fileReader = fileReader;
   let self = this;
 
   fileReader.onload = function(fileLoadedEvent){
