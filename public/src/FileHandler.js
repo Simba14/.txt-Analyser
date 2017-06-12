@@ -12,10 +12,10 @@ FileHandler.prototype.loadFileAsText = function() {
   let self = this;
 
   fileReader.onload = function(fileLoadedEvent){
-      self.storeFileText(fileLoadedEvent.target.result);
+      return self.storeFileText(fileLoadedEvent.target.result);
   };
 
-  fileReader.readAsText(this.file, "UTF-8");
+  return fileReader.readAsText(this.file, "UTF-8");
 }
 
 FileHandler.prototype.storeFileText = function(text) {
